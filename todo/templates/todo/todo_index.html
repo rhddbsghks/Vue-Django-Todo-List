@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title%}Vue & Django todo app{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{% endblock %}
+
+{% block extra-script %}
+ <script src="{% static 'main.js' %}" defer></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div id='app'>
+
+        <h1>My Todo App !</h1>
+        <strong>서로 할 일이나 의견을 공유해 봅시다.</strong>
+        <br>
+
+
+
+        <div class="inputBox">
+            <input class="name" type="text" placeholder="name ..." v-model.trim="name">
+            <input class="item" type="text" placeholder="type anything welcomed ..." v-model.trim="todo" v-on:keyup.enter="add_todo()">
+            <button class="btn btn-primary btn-sm" v-on:click="add_todo()">ADD</button>
+        </div>
+
+        <ul class="todoList">
+            <li v-for="(todo, index) in todoList">
+                <span>[[ todo.name ]]:: [[ todo.todo ]]</span>
+                <span class="removeBtn" v-on:click="remove_todo(todo, index)">X</span>
+            </li>
+        </ul>
+
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+
+.home-window {
+    background-image: url("static/img/lion.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 500px;
+    border-top: 10px solid #ccc;
+    border-bottom: 10px solid #ccc;
+    color: yellow;
+    padding: 20px 0 0 20px;
+}
+.title {
+    color: #c80;
+    font-weight: bold;
+}
+.powered {
+    position: relative;
+    top: 77%;
+    color: #cc0;
+    font-style: italic;
+}
+
+.footer-wrapper {
+    background: #456;
+    color: #eee;
+    line-height: 50px;
+}
+.footer-wrapper a {
+    color: #ff9;    /* footer-right text */
+}
+.footer-wrapper a:hover {
+    color: #0ff;
+}
+footer ul li {
+    text-align: center;
+}
